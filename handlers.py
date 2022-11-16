@@ -4,6 +4,8 @@ from text import texts
 import keyboard
 
 
+
+
 async def send_message_start(message):
     await bot.send_video(message.from_user.id, video=InputFile(path_or_bytesio="Video.mp4"), caption=f"{texts['start']}", reply_markup=keyboard.kb_mark_main,)
 
@@ -57,3 +59,5 @@ def register_handlers(dp):
     dp.register_callback_query_handler(send_message_sign_up, lambda callback: callback.data == "sign_up", state=None)
     dp.register_message_handler(work_message, lambda message: "наши работы до-после" in message.text.lower(), state=None)
     dp.register_message_handler(about_us_message, lambda message: "о нас" in message.text.lower(), state=None)
+
+
