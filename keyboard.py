@@ -36,7 +36,11 @@ services = ["Брекет системы 12.990₽", "Имплантация 14.
 inl_kb_mark_services = InlineKeyboardMarkup()
 for i, ser in enumerate(services):
     inl_kb_mark_services.add(InlineKeyboardButton(ser, callback_data=f"ser_{i+1}"))
+btn_sign_up_num_2 = InlineKeyboardButton("Консультация по телефону  ☎️", url="https://clicks.su/gbNLJL")
+btn_sign_up_tg_2 = InlineKeyboardButton("Консультация в Telegram 💬", url="https://t.me/yourclinicpro")
+inl_kb_mark_services.add(btn_sign_up_num_2).add(btn_sign_up_tg_2)
 
 btn_sign_up_service = InlineKeyboardButton("Записаться", callback_data="sign_up")
 btn_back_service = InlineKeyboardButton("Назад", callback_data="back")
 inl_kb_mark_service_description = InlineKeyboardMarkup().add(btn_sign_up_service).add(btn_back_service)
+
